@@ -1,8 +1,7 @@
 package com.example.githubuserapp.response
 
-import com.google.gson.annotations.SerializedName
-
 data class UserResponse(
-    @SerializedName("users")
-    val items : ArrayList<User>
+    val incomplete_results: Boolean,
+    val items: ArrayList<User>,
+    val total_count: Int
 )

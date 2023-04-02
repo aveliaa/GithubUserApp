@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity() {
 
             searchField.setOnKeyListener { view, i, keyEvent ->
                 if(i == KeyEvent.KEYCODE_ENTER && keyEvent.action == KeyEvent.ACTION_DOWN){
-                    search()
                     return@setOnKeyListener true
                 }
                 return@setOnKeyListener false
@@ -54,19 +53,21 @@ class MainActivity : AppCompatActivity() {
     private fun search(){
         activityMainBinding.apply {
             val input = searchField.text.toString()
+
             if(input.isNotEmpty()){
                 setProgressBar(true)
                 mainViewModel.setSearchResult(input)
-            }
+
+            }else return
         }
     }
 
     // visual effect : loading progress bar
     private fun setProgressBar(state: Boolean){
-        var status = View.GONE
         if(state){
-            status = View.VISIBLE
+            activityMainBinding.progress.visibility = View.VISIBLE
+        }else{
+            activityMainBinding.progress.visibility = View.GONE
         }
-        activityMainBinding.progress.visibility = status
     }
 }

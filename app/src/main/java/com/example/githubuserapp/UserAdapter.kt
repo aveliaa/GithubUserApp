@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
-import com.example.githubuserapp.databinding.ActivityMainBinding
 import com.example.githubuserapp.databinding.ItemUserBinding
 import com.example.githubuserapp.response.User
 
